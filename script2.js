@@ -26,8 +26,10 @@ function createCookies() {
     var formFields = document.querySelectorAll("input[type=hidden], input[type=radio], textarea");
     for (var i = 0; i < formFields.length; i++) {
         var currentValue = decodeURIComponent(formFields[i].value);
+        var expiresDate = new Date();
+        expiresDate.setDate(expiresDate.getDate() + 7);
         currentValue = currentValue.replace(/\+/g, " ");
-        document.cookie = formFields[i].name + "=" + currentValue;
+        document.cookie = formFields[i].name + "=" + currentValue + "; expires=" + expiresDate.toUTCString();
     }
 }
 
