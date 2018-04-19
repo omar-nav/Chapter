@@ -2,7 +2,7 @@
 * chapter 9
 * case
 * eating well in season
-*
+* script2.js
 * */
 
 "use strict";
